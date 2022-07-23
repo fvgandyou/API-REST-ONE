@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramdon Loving Cats</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: lavender;
+        }
+        input {
+            font-size: 1rem;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .container1 {
+            width: 680px;
+            margin: 20px auto;
+            height: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+        .container1 h1 {
+            font-size: 2rem;
+            color: darkslateblue;
+        }
+        .container1 span {
+            padding: 0 10px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid gainsboro;
+            border-radius: 6px;
+            background-color: antiquewhite;
+            box-shadow: 4px 4px 12px gainsboro;
+        }
+        #random {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, auto);
+        }
+        div h2, section h2 {
+            padding: 16px 0;
+            font-size: 1.4rem;
+            color: darkslateblue;
+            text-align: center;
+        }
+        #container2 {
+            width: 90%;
+            margin: 0 auto;
+            padding: 12px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 8px;
+            text-align: center;
+            border: 1px solid gainsboro;
+            border-radius: 20px;
+            background-color: rgba(220, 220, 220, 0.4);
+        }
+        #container2 section {
+            display: grid;
+            place-content: center;
+            grid-template-columns: repeat(4, 1fr);
+            grid-auto-rows: auto;
+        }
+        #random article, #favorite article {
+            place-self: center;
+            padding: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        #random article img, #favorite article img, #uploadForm img {
+            border-radius: 8px;
+        }
+        #random article button, #loadCat, #favorite article button, #uploadForm button {
+            width: fit-content;
+            font-size: 1rem;
+            font-weight: bold;
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            background-color: burlywood;
+        }
+        #random article button:hover, #loadCat:hover, #favorite article button:hover, #uploadForm button:hover {
+            color: darkslategray;
+        }
+        #uploadForm {
+            width: 300px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+        }
+        #uploadForm img {
+            max-width: 160px;
+            max-height: 160px;
+        }
+    </style>
+</head>
+<body>
+    <section class="container1">
+        <h1>Random Loving Cats</h1>
+        <span id="error"></span>
+        <div id="random">
+            <article>
+                <img alt="Random Cat" class="randomCat" id="randomCat" width="240px">
+                <button id="button1">Save loving cat</button>
+            </article>
+            <article>
+                <img alt="Random Cat" class="randomCat" width="240px">
+                <button id="button2">Save loving cat</button>
+            </article>
+            <article>
+                <img alt="Random Cat" class="randomCat" width="240px">
+                <button id="button3">Save loving cat</button>
+            </article>
+            <article>
+                <img alt="Random Cat" class="randomCat" width="240px">
+                <button id="button4">Save loving cat</button>
+            </article> 
+        </div>
+        <button type="button" id="loadCat" onclick="loadCat()">Load Cats New</button>
+    </section>
+    <section id="uploadCat">
+        <h2>Upload photo of loving cat</h2>
+        <form id="uploadForm">
+            <img id="newCat">
+            <input type="file" name="file" value="file" onchange="previewCat()" id="file"> <!--If you use onchange must order the input with the next method <input type="xxx" name="xxx" value="xxx" onchange="xxx()"-->
+            <button type="button" onclick="uploadPhotoCat()">Load Photo Cat</button>
+        </form>
+    </section>
+    <div>
+        <h2>Favourites Cat</h2>
+    </div>
+    <section id="container2">
+        <section id="favorite"> <!--Content create in main.js => Function favouriteCat-->
+        </section> 
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

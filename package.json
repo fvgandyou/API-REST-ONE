@@ -1,0 +1,16 @@
+{
+  "name": "api-rest",
+  "version": "1.0.0",
+  "description": "Coding to use API REST",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "API",
+    "REST",
+    "ASYNC"
+  ],
+  "author": "Ferney Velasco Garzon",
+  "license": "MIT"
+}
